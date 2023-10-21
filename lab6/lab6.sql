@@ -23,13 +23,13 @@ CREATE TABLE `lines` (
 CREATE TABLE `stations` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `line_color` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `line_id` int(10) UNSIGNED NOT NULL,
+  `previous_station` varchar(255) COLLATE utf8_unicode_ci,
+  `next_station` varchar(255) COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `connections` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `station_name_1` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `station_name_2` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
+  `station_id_1` int(10) UNSIGNED NOT NULL,
+  `station_id_2` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
