@@ -13,6 +13,7 @@ CREATE TABLE `users` (
 CREATE TABLE `projects` (
 	id int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
     name varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	file_id int(11) UNSIGNED,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -21,6 +22,7 @@ CREATE TABLE `tasks` (
     name varchar(255) COLLATE utf8_unicode_ci NOT NULL,
     project_id int(11) UNSIGNED NOT NULL,
     author_id int(11) UNSIGNED NOT NULL,
+	file_id int(11) UNSIGNED,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -42,8 +44,6 @@ CREATE TABLE `files` (
 	id int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
     name varchar(255) COLLATE utf8_unicode_ci NOT NULL,
     url varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-    project_id int(11) UNSIGNED,
-    task_id int(11) UNSIGNED,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
